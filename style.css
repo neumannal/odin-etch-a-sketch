@@ -1,15 +1,18 @@
+#button-container {
+    margin: 24px;
+    text-align: center;
+}
+
 #container {
     background-color: aquamarine;
     display: flex; 
     flex-wrap: wrap; 
-    width: 48vw;
-    height: 48vw;
+    width: 640px;
+    height: 640px;
     margin: auto;
 }
 
 .square {
-    width: 12vw;
-    height: 12vw;
     background-color: blue;
 }
 
