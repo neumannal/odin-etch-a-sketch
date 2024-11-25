@@ -14,9 +14,15 @@ function createDivGrid (squaresPerSide) {
     container.replaceChildren(...newDivsArray);
 }
 
+function getRandomColorValue() {
+    return Math.floor(Math.random() * 256);
+}
+
 function hoverChangeColor (event) {
-    event.target.classList.toggle("hover");
-    console.log(event);
+    randomRed = getRandomColorValue();
+    randomGreen = getRandomColorValue();
+    randomBlue = getRandomColorValue();
+    event.target.style.backgroundColor = `rgb(${randomRed},${randomGreen},${randomBlue})`;
 }
 
 function resetGrid (event) {
