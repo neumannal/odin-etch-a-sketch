@@ -1,0 +1,14 @@
+#container {
+    background-color: aquamarine;
+    display: flex; 
+    flex-wrap: wrap; 
+    width: 48vw;
+    height: 48vw;
+    margin: auto;
+}
+
+.square {
+    width: 12vw;
+    height: 12vw;
+    background-color: blue;
+}
