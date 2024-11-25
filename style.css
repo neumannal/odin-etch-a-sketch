@@ -4,16 +4,14 @@
 }
 
 #container {
-    background-color: aquamarine;
+    border-color: black;
+    border-width: 1px;
+    border-style: dashed;
     display: flex; 
     flex-wrap: wrap; 
     width: 640px;
     height: 640px;
     margin: auto;
-}
-
-.square {
-    background-color: blue;
 }
 
 .hover {

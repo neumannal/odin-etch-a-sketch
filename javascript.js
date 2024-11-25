@@ -8,7 +8,7 @@ function createDivGrid (squaresPerSide) {
     for (let i=0; i<squaresPerSide*squaresPerSide; i++) {
         const div = document.createElement("div");
         div.classList.add("square");
-        div.style.cssText = `width: ${squareSize}px; height: ${squareSize}px`;
+        div.style.cssText = `width: ${squareSize}px; height: ${squareSize}px; background: rgba(0 0 255 / 100%);`;
         newDivsArray.push(div)
     }
     container.replaceChildren(...newDivsArray);
@@ -19,10 +19,19 @@ function getRandomColorValue() {
 }
 
 function hoverChangeColor (event) {
-    randomRed = getRandomColorValue();
-    randomGreen = getRandomColorValue();
-    randomBlue = getRandomColorValue();
-    event.target.style.backgroundColor = `rgb(${randomRed},${randomGreen},${randomBlue})`;
+    if (event.target.id !== "container") {
+        randomRed = getRandomColorValue();
+        randomGreen = getRandomColorValue();
+        randomBlue = getRandomColorValue();
+    
+        const oldOpacity = event.target.style.background.split(",")[3];
+        let newOpacity = 0.9;
+        if (oldOpacity) {
+            newOpacity = Math.max(+oldOpacity.split(")")[0] - 0.1, 0);
+        }
+    
+        event.target.style.background = `rgb(${randomRed} ${randomGreen} ${randomBlue} / ${newOpacity})`;
+    }
 }
 
 function resetGrid (event) {
