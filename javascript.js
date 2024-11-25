@@ -10,4 +10,11 @@ function createDivGrid () {
     }
 }
 
+function hoverChangeColor (event) {
+    event.target.classList.toggle("hover");
+    console.log(event);
+}
+
 createDivGrid();
+
+container.addEventListener("mouseover", hoverChangeColor);
